@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block styles %}
+<link rel="stylesheet" href="/static/css/home.css" />
+{% endblock styles %}
+{% block title %}Welcome to Swimmer Tracking System{% endblock title %}
+{% block body %}
+<section class="intro">
+    <div class="container-fluid hero px-2 py-5">
+        <h1 class="main-heading text-center">Welcome to Swimmer Tracking!</h1>
+        <p class="desc text-white text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, sit!<br>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil eveniet voluptates aspernatur<br> quos
+            minima sequi cupiditate magni beatae fuga. Adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam <br>officia sunt iusto, recusandae
+            asperiores minima.
+        </p>
+        <div class="cta row mx-3">
+            <div class="col-md-4 text-center my-2">
+                <a href="/login" class="btn btn-primary rounded-pill cta-btn px-5 py-3">Login Now</a>
+            </div>
+        </div>
+        <div class="credit p-3">
+            <p class="text-center text-white">&copy; 2022.  All Rights Reserved.</p>
+        </div>
+    </div>
+
+</section>
+{% endblock body %}

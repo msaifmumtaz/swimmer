@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block title %}
+Dashboard
+{% endblock title %}
+{% block styles %}
+<link rel="stylesheet" href="/static/css/home.css" />
+{% endblock styles %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm bg-dark" id="mainNav">
+  <div class="container px-5">
+    <a class="navbar-brand fw-bold" href="javascript:;">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="bi-list"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link me-lg-3" href="/updatedataset">Update Dataset</a></li>
+        <li class="nav-item"><a class="nav-link me-lg-3" href="/train-model">Train Model</a></li>
+        <li class="nav-item">
+          <a class="btn btn-primary rounded-pill me-lg-3 px-3 mb-2 mb-lg-0" href="/facedetect">
+              <span class="small">Recognize Yourself</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-danger rounded-pill px-3" href="/logout">
+              <span class="small">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="dash-about">
+  <div class="team text-center">
+    <h2 class="dash-title">About Us</h2>
+    <p class="dash-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem libero, sint iusto
+      saepe,<br>
+      itaque quas fugit perferendis esse excepturi, assumenda enim dolores et at odit. Eligendi ipsam non aperiam aut.
+    </p>
+    <div class="container">
+
+      <div class="row heading">
+        <div class="col-md-12 col-md-offset-3">
+          <h2 class="text-center bottom-line">Meet Our Team</h2>
+          <p class="subheading text-center">Creative Nerds</p>
+        </div>
+      </div>
+
+      <div class="row team-row">
+
+        <div class="col-md-4 col-sm-6 team-wrap">
+          <div class="team-member text-center">
+            <div class="team-img">
+              <img src="/static/img/site/profile/" alt="Usama's Image">
+              <div class="overlay">
+                <div class="team-details text-center">
+                  <p>
+                    Our web design team will spend time with our digital marketing team.
+                  </p>
+                  <div class="socials mt-20">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h6 class="team-title">Usama</h6>
+            <span>Backend Developer</span>
+          </div>
+        </div>
+        <!-- end team member -->
+
+        <div class="col-md-4 col-sm-6 team-wrap">
+          <div class="team-member text-center">
+            <div class="team-img">
+              <img src="/static/img/site/profile/" alt="Abaid Ullah Image">
+              <div class="overlay">
+                <div class="team-details text-center">
+                  <p>
+                    Our web design team will spend time with our digital marketing team.
+                  </p>
+                  <div class="socials mt-20">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h6 class="team-title">Abaid Ullah</h6>
+            <span>Front End Developer</span>
+          </div>
+        </div>
+        <!-- end team member -->
+
+        <div class="col-md-4 col-sm-6 team-wrap">
+          <div class="team-member last text-center">
+            <div class="team-img">
+              <img src="/static/img/site/profile/" alt="M. Awais Image">
+              <div class="overlay">
+                <div class="team-details text-center">
+                  <p>
+                    Our web design team will spend time with our digital marketing team.
+                  </p>
+                  <div class="socials mt-20">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h6 class="team-title">M.Awais</h6>
+            <span>Designer</span>
+          </div>
+        </div>
+        <!-- end team member -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock body %}

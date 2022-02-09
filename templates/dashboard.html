@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block title %}
+Dashboard
+{% endblock title %}
+{% block styles %}
+<link rel="stylesheet" href="/static/css/home.css" />
+<style>
+  .upload-section {
+    background-color: #fff;
+    padding: 10rem 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  h2 {
+    font-size: 30px;
+    color: #000;
+    text-transform: capitalize;
+  }
+
+  .form-controls {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .form-controls label {
+    font-weight: 600;
+  }
+
+  .form-controls input {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .form-controls span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    text-transform: uppercase;
+  }
+</style>
+{% endblock styles %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm bg-dark d-flex align-center" id="mainNav">
+  <div class="container px-5 text-center">
+    <a class="navbar-brand fw-bold" href="javascript:;">Upload Video</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="bi-list"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link me-lg-3" href="#upload-video">Start Swimmers Tracking</a></li>
+        <!-- <li class="nav-item"><a class="nav-link me-lg-3" href="/train-model">Train Model</a></li> -->
+        <li class="nav-item">
+          <a class="btn btn-danger rounded-pill px-3" href="/logout">
+            <span class="small">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</nav>
+<section class="dash-about">
+  <div class="team text-center">
+    <h2 class="dash-title">About Us</h2>
+    <p class="dash-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem libero, sint iusto
+      saepe,<br>
+      itaque quas fugit perferendis esse excepturi, assumenda enim dolores et at odit. Eligendi ipsam non aperiam aut.
+    </p>
+  </div>
+</section>
+<section class="upload-section" id="upload-video">
+
+  <form action="/dashboard" method="POST" enctype="multipart/form-data">
+    <h2>Upload Video File</h2>
+    {% csrf_token %}
+    <div class="response text-primary">
+      {% if messages %} {% for message in messages %}
+      <p class="bg-light text-{{message.tags}}">{{message}}</p>
+      {% endfor %} {% endif %}
+    </div>
+    <div class="form-controls">
+      <label for="file"> Choose MP4 Video File:</label>
+      <input id='video' type="file" name='video' accept="video/mp4" onchange="javascript:fileValidation();">
+      <span> ** Only mp4 files allowed.</span>
+    </div>
+    <input type="submit" class="btn btn-primary rounded-pill px-4 py-2" value="Upload Now">
+  </form>
+</section>
+<script>
+  function fileValidation() {
+    var fileInput =
+      document.getElementById('video');
+
+    var filePath = fileInput.value;
+
+    // Allowing file type
+    var allowedExtensions =
+      /(\.mp4)$/i;
+
+    if (!allowedExtensions.exec(filePath)) {
+      alert('Invalid file type');
+      fileInput.value = '';
+      return false;
+    }
+  }
+</script>
+
+{% endblock body %}
